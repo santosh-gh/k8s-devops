@@ -10,4 +10,12 @@ kubectl get gitrepositories.source.toolkit.fluxcd.io -n flux-system
 
 flux get sources git
 
-flux create kustomization k8s-devops --source=k8s-devops --path="./kustomize" --prune=true --validation=client --interval=5m --export > ./clusters/my-cluster/helloapp-kustomization.yaml
+flux create kustomization k8s-devops --source=k8s-devops --path="./k8s" --prune=true --validation=client --interval=5m --export > ./clusters/my-cluster/helloapp-kustomization.yaml
+
+kubectl get all -n flux-system
+
+flux bootstrap github --owner=$GITHUB_USER --repository=$GITHUB_REPO --branch=main --path=./clusters/my-cluster --personal
+
+flux get kustomization --watch
+
+flux reconcile source git flux-system -n flux-system
