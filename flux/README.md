@@ -1,7 +1,3 @@
-$GITHUB_TOKEN = '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'
-$GITHUB_USER = 'santosh-gh'
-$GITHUB_REPO = 'K8S-DEVOPS'
-
 git auth login
 
 flux bootstrap github --owner=$GITHUB_USER --repository=$GITHUB_REPO --branch=main --path=./clusters/my-cluster --personal
