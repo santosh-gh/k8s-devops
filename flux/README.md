@@ -19,3 +19,7 @@ flux bootstrap github --owner=$GITHUB_USER --repository=$GITHUB_REPO --branch=ma
 flux get kustomization --watch
 
 flux reconcile source git flux-system -n flux-system
+
+flux create source git podinfo --url=https://github.com/dexterposh/podinfo --branch=main --interval=30s --export > ./clusters/my-cluster/podinfo-source.yaml
+
+flux create kustomization podinfo --source=podinfo --path="./kustomize" --prune=true --validation=client --interval=5m --export > ./clusters/my-cluster/podinfo-kustomization.yaml
