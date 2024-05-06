@@ -26,3 +26,4 @@ flux create kustomization podinfo --source=podinfo --path="./kustomize" --prune=
 
 flux create source git mac-repo  --url=https://github.com/amit17133129/mac-repo  --branch=main --interval=30s --export > ./app-cluster/source.yaml
 
+flux bootstrap github --owner=$GITHUB_USER --repository=fluxtest1111 --branch=main --path=./clusters/my-cluster --personal
