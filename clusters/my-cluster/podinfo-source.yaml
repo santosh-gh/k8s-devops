@@ -2,10 +2,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: podinfo
+  name: k8s-devops
   namespace: flux-system
 spec:
   interval: 30s
   ref:
     branch: main
-  url: https://github.com/dexterposh/podinfo
+  url: https://github.com/santosh-gh/k8s-devops

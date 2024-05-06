@@ -23,3 +23,6 @@ flux reconcile source git flux-system -n flux-system
 flux create source git podinfo --url=https://github.com/dexterposh/podinfo --branch=main --interval=30s --export > ./clusters/my-cluster/podinfo-source.yaml
 
 flux create kustomization podinfo --source=podinfo --path="./kustomize" --prune=true --validation=client --interval=5m --export > ./clusters/my-cluster/podinfo-kustomization.yaml
+
+flux create source git mac-repo  --url=https://github.com/amit17133129/mac-repo  --branch=main --interval=30s --export > ./app-cluster/source.yaml
+
