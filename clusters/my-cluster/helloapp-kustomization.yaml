@@ -12,4 +12,3 @@ spec:
   sourceRef:
     kind: GitRepository
     name: k8s-devops
-  targetNamespace: flux-system
