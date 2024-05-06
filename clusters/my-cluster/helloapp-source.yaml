@@ -8,4 +8,4 @@ spec:
   interval: 30s
   ref:
     branch: main
-  url: https://github.com/santosh-gh/k8s-devops/k8s/manifest
+  url: https://github.com/santosh-gh/k8s-devops/
