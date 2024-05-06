@@ -4,8 +4,8 @@ $GITHUB_REPO = 'K8S-DEVOPS'
 
 git auth login
 
-flux bootstrap github --owner=$GITHUB_USER --repository=$GITHUB_REPO --branch=main --path=./clusters/my-cluster-cluster --personal
+flux bootstrap github --owner=$GITHUB_USER --repository=$GITHUB_REPO --branch=main --path=./clusters/my-cluster --personal
 
 kubectl api-resources | grep flux
 
-flux create source git podinfo --url=https://github.com/dexterposh/podinfo --branch=main --interval=30s --export > ./clusters/my-cluster/podinfo-source.yaml
+flux create source git k8s-devops --url=https://github.com/santosh-gh/k8s-devops --branch=main --interval=30s --export > ./clusters/my-cluster/helloapp-source.yaml
